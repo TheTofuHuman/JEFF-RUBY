@@ -254,9 +254,8 @@
         .timeline-item::before {
             content: '';
             position: absolute;
-            /* 讓圓點中心剛好壓在 border-left 的 2px 線條中央 */
-            /* 計算方式：-(內距 padding-left 24px) - (線條寬度的一半 1px) - (圓點寬度的一半 6px) = -31px */
-            left: -31px; 
+            /* 調整這裡：從 -31px 改為 -25px，讓圓點往右移一點點剛好壓在線上 */
+            left: -25px; 
             top: 50%;
             transform: translateY(-50%);
             width: 12px;
