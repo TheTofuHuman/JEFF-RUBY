@@ -250,11 +250,11 @@
             align-items: center;
         }
 
-        /* 修正圓點與線條的對齊 */
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -16px; 
+            /* 必須使用夠大的負數，把它從卡片內部向左拉回最外側的線條上 */
+            left: -31px; 
             top: 50%;
             transform: translateY(-50%);
             width: 12px;
