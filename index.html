@@ -228,13 +228,13 @@
         }
         .btn-outline:hover { background-color: var(--primary-green); color: white; }
 
-        /* 時間軸線條 */
+        /* 時間軸線條 (將線條定位在精準位置) */
         .timeline {
             position: relative;
             max-width: 320px;
             margin: 0 auto;
-            padding-left: 20px;
-            border-left: 2px solid rgba(184, 151, 83, 0.4);
+            padding-left: 24px; /* 設定內距給圓點空間 */
+            border-left: 2px solid rgba(184, 151, 83, 0.4); /* 垂直線條 */
             text-align: left;
         }
 
@@ -250,10 +250,13 @@
             align-items: center;
         }
 
+        /* 修正圓點與線條的對齊 */
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -27px;
+            /* 讓圓點中心剛好壓在 border-left 的 2px 線條中央 */
+            /* 計算方式：-(內距 padding-left 24px) - (線條寬度的一半 1px) - (圓點寬度的一半 6px) = -31px */
+            left: -31px; 
             top: 50%;
             transform: translateY(-50%);
             width: 12px;
